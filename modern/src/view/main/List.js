@@ -6,19 +6,18 @@ Ext.define('AccaEsseCappaUno.view.main.List', {
     xtype: 'mainlist',
 
     requires: [
-        'AccaEsseCappaUno.store.Personnel'
+        'AccaEsseCappaUno.store.Words'
     ],
 
-    title: 'Personnel',
+    title: 'Words list',
 
     store: {
-        type: 'personnel'
+        type: 'words'
     },
 
     columns: [
-        { text: 'Name',  dataIndex: 'name', width: 100 },
-        { text: 'Email', dataIndex: 'email', width: 230 },
-        { text: 'Phone', dataIndex: 'phone', width: 150 }
+        { text: 'Pinyin',  dataIndex: 'pinyinToneSpace' },
+        { text: 'Hanzi',  dataIndex: 'hanzi' }
     ],
 
     listeners: {

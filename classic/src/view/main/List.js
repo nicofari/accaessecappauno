@@ -6,13 +6,13 @@ Ext.define('AccaEsseCappaUno.view.main.List', {
     xtype: 'mainlist',
 
     requires: [
-        'AccaEsseCappaUno.store.Personnel'
+        'AccaEsseCappaUno.store.Words'
     ],
 
-    title: 'Personnel',
+    title: 'Words',
 
     store: {
-        type: 'personnel'
+        type: 'words'
     },
 
     columns: [
