@@ -8,7 +8,10 @@ Ext.define('AccaEsseCappaUno.view.main.MainModel', {
 
     data: {
         name: 'AccaEsseCappaUno',
-        homeText: 'Welcome to Accaessecappauno! <p />This is an app to practice words for HSK level 1 exam. <br />Click on List to see the requested words.'
+        homeText: `<h1>Welcome to Accaessecappauno!</h1> <p />
+        This is an app to practice words for HSK level 1 exam. <p />
+        Click on List to see the requested words. <p />
+        Words list comes from https://www.hsk.academy`
     }
 
     //TODO - add data, formulas and/or methods to support your view

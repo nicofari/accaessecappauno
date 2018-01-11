@@ -87,8 +87,8 @@ Ext.define('AccaEsseCappaUno.view.main.Main', {
             xtype: 'mainlist'
         }]
     }, {
-        title: 'Groups',
-        iconCls: 'fa-users',
+        title: 'Cards',
+        iconCls: 'fa-file-text',
         bind: {
             html: '{loremIpsum}'
         }
