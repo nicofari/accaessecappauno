@@ -12,7 +12,6 @@ Ext.define('AccaEsseCappaUno.view.main.Main', {
     requires: [
         'Ext.plugin.Viewport',
         'Ext.window.MessageBox',
-
         'AccaEsseCappaUno.view.main.MainController',
         'AccaEsseCappaUno.view.main.MainModel',
         'AccaEsseCappaUno.view.main.List'
@@ -78,16 +77,15 @@ Ext.define('AccaEsseCappaUno.view.main.Main', {
     items: [{
         title: 'Home',
         iconCls: 'fa-home',
-        // The following grid shares a store with the classic version's grid as well!
+        bind: {
+            html: '{homeText}'
+        }
+    }, {
+        title: 'List',
+        iconCls: 'fa-list',
         items: [{
             xtype: 'mainlist'
         }]
-    }, {
-        title: 'Users',
-        iconCls: 'fa-user',
-        bind: {
-            html: '{loremIpsum}'
-        }
     }, {
         title: 'Groups',
         iconCls: 'fa-users',

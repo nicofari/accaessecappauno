@@ -17,7 +17,8 @@ Ext.define('AccaEsseCappaUno.view.main.List', {
 
     columns: [
         { text: 'Pinyin',  dataIndex: 'pinyinToneSpace' },
-        { text: 'Hanzi',  dataIndex: 'hanzi' }
+        { text: 'Hanzi',  dataIndex: 'hanzi' },
+        { text: 'Definition',  dataIndex: 'definition', width: 500 }
     ],
 
     listeners: {
