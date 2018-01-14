@@ -1,6 +1,3 @@
-/**
- * This view is an example list of people.
- */
 Ext.define('AccaEsseCappaUno.view.main.List', {
     extend: 'Ext.grid.Grid',
     xtype: 'mainlist',
@@ -22,6 +19,6 @@ Ext.define('AccaEsseCappaUno.view.main.List', {
     ],
 
     listeners: {
-        select: 'onItemSelected'
+        itemdoubletap: 'onItemDoubleTap'
     }
 });

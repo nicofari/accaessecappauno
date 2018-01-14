@@ -12,6 +12,11 @@ Ext.define('AccaEsseCappaUno.view.main.MainController', {
         this._getMainTabPanel().setActiveTab(2);
     },
 
+    onItemDoubleTap: function (sender, index, target, record) {
+        this._currentRecordPosition = this._getRecordPosition(record);
+        this._getMainTabPanel().setActiveItem(2);
+    },
+
     _getMainTabPanel: function () {
         return Ext.ComponentQuery.query('tabpanel')[0];
     },
@@ -28,6 +33,13 @@ Ext.define('AccaEsseCappaUno.view.main.MainController', {
         if (newCard.title === 'Cards') {
             let form = newCard.query('form')[0];
             form.loadRecord(this._getCurrentRecord());
+        }
+    },
+
+    onActiveItemChange: function (sender, newTab) {
+        if (newTab.title === 'Cards') {
+            let form = newTab.query('formpanel')[0];
+            form.setRecord(this._getCurrentRecord());
         }
     },
 
@@ -72,5 +84,28 @@ Ext.define('AccaEsseCappaUno.view.main.MainController', {
 
     _getRecordCount: function () {
         return this._getStore().getCount();
+    },
+
+    onModernClickPrev: function () {
+        if (this._currentRecordPosition > 0) {
+            this._currentRecordPosition--;
+        }
+        this._loadModernCurrentRecord();
+    },
+
+    onModernClickNext: function () {
+        if (this._currentRecordPosition < this._getRecordCount() - 1) {
+            this._currentRecordPosition++;
+        }
+        this._loadModernCurrentRecord();
+    },
+
+    _loadModernCurrentRecord: function () {
+        this._getModernForm().setRecord(this._getCurrentRecord());
+    },
+
+    _getModernForm: function () {
+        return Ext.ComponentManager.get('modern-maincard');
     }
+    
 });

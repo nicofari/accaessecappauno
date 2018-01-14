@@ -13,6 +13,7 @@ Ext.define('AccaEsseCappaUno.view.main.Main', {
         'Ext.MessageBox',
         'AccaEsseCappaUno.view.main.MainController',
         'AccaEsseCappaUno.view.main.MainModel',
+        'AccaEsseCappaUno.view.main.Card',
         'AccaEsseCappaUno.view.main.List'
     ],
 
@@ -39,21 +40,15 @@ Ext.define('AccaEsseCappaUno.view.main.Main', {
             title: 'List',
             iconCls: 'x-fa fa-list',
             layout: 'fit',
-            items: [{
-                xtype: 'mainlist'
-            }]
+            items: { xtype: 'mainlist' }
         },{
             title: 'Cards',
             iconCls: 'x-fa fa-file-text',
-            bind: {
-                html: '{loremIpsum}'
-            }
-        },{
-            title: 'Settings',
-            iconCls: 'x-fa fa-cog',
-            bind: {
-                html: '{loremIpsum}'
-            }
+            items: { xtype: 'maincard' }
         }
-    ]
+    ],
+
+    listeners: {
+        activeItemchange: 'onActiveItemChange'
+    }
 });
