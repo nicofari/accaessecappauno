@@ -2,6 +2,7 @@ Ext.define('AccaEsseCappaUno.store.Words', {
     extend: 'Ext.data.Store',
     autoLoad: true,
     alias: 'store.words',
+    storeId: 'words',
 
     fields: [
         'pinyinToneSpace', 'hanzi', 'definition'

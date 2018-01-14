@@ -14,6 +14,7 @@ Ext.define('AccaEsseCappaUno.view.main.Main', {
         'Ext.window.MessageBox',
         'AccaEsseCappaUno.view.main.MainController',
         'AccaEsseCappaUno.view.main.MainModel',
+        'AccaEsseCappaUno.view.main.Card',
         'AccaEsseCappaUno.view.main.List'
     ],
 
@@ -89,14 +90,10 @@ Ext.define('AccaEsseCappaUno.view.main.Main', {
     }, {
         title: 'Cards',
         iconCls: 'fa-file-text',
-        bind: {
-            html: '{loremIpsum}'
-        }
-    }, {
-        title: 'Settings',
-        iconCls: 'fa-cog',
-        bind: {
-            html: '{loremIpsum}'
-        }
-    }]
+        items: { xtype: 'maincard' }
+    }],
+
+    listeners: {
+        tabchange: 'onTabChange'
+    }
 });

@@ -1,6 +1,3 @@
-/**
- * This view is an example list of people.
- */
 Ext.define('AccaEsseCappaUno.view.main.List', {
     extend: 'Ext.grid.Panel',
     xtype: 'mainlist',
@@ -9,7 +6,7 @@ Ext.define('AccaEsseCappaUno.view.main.List', {
         'AccaEsseCappaUno.store.Words'
     ],
 
-    title: 'Words',
+    title: 'List view',
 
     store: {
         type: 'words'
@@ -22,6 +19,6 @@ Ext.define('AccaEsseCappaUno.view.main.List', {
     ],
 
     listeners: {
-        select: 'onItemSelected'
+        rowdblclick: 'onRowDblClick'
     }
 });
